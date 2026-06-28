@@ -1,0 +1,33 @@
+# Project Log
+
+## [2026-06-28] ingest | Competition folder
+
+Parsed the local Byte2Beat workspace. The folder contains competition documents, an idea catalog, two tabular cardiovascular datasets, and one large ECG time-series CSV. No git repository or dependency scaffold existed at the start.
+
+## [2026-06-28] ingest | LLM-wiki principle
+
+Read the referenced gist describing an LLM-maintained persistent wiki over immutable raw sources. Adapted it into `AGENTS.md` and the `research/` directory structure.
+
+## [2026-06-28] audit | Initial dataset profile
+
+Ran a first-pass profile of the provided CSV files. Key findings: cardiac failure has 70,000 balanced rows but blood pressure outliers; heart attack has 918 rows and many zero cholesterol values; ECG CSV is 632 MB with 528 rows and roughly 124k columns, requiring special handling.
+
+## [2026-06-28] eda | Tabular cleaning impact
+
+Added `scripts/eda_tabular.py` and generated cleaning-impact tables. In `cardio_base.csv`, the initial body-and-BP plausibility filter removes 1,395 of 70,000 rows and shifts target rate from 0.4997 to 0.4947. In `heart_processed.csv`, treating zero cholesterol as unobserved affects 172 of 918 rows and changes target rate from 0.5534 to 0.4772 in the observed-cholesterol subset.
+
+## [2026-06-28] model | Numpy logistic baseline
+
+Added `scripts/baseline_tabular_numpy.py`, a dependency-light logistic-regression baseline. On the cleaned cardiac dataset, the held-out test AUROC is 0.7974 with accuracy 0.7359. On the small heart dataset, held-out test AUROC is 0.9411 with accuracy 0.8705, but this result is high-variance due to the small sample size.
+
+## [2026-06-28] plan | Full ideal project operating plan
+
+Expanded `research/project_plan.md` into the canonical execution plan. The plan now defines the project thesis, ideal-project criteria, phase-by-phase tasks, quality gates, risk register, execution cadence, Kaggle Writeup structure, and article/preprint path.
+
+## [2026-06-28] foundation | Environment, sklearn models, and writeup artifacts
+
+Created `.venv`, installed project dependencies, added reusable code under `src/byte2beat/`, generated EDA figures, and added `scripts/model_comparison.py`. Current best cardiac model is `hist_gradient_boosting` with held-out test AUROC 0.8037 and 5-fold CV AUROC 0.8013 +/- 0.0025. Added notebook/writeup/manuscript scaffolding for the final submission path.
+
+## [2026-06-28] audit | ECG schema gate
+
+Added `scripts/profile_ecg_schema.py` and generated `outputs/tables/ecg_schema_audit.json`. The ECG CSV has 123,995 columns, 528 rows, and 36,441 duplicate non-empty header names, confirming that ECG must remain a gated extension until row semantics and labels are understood.

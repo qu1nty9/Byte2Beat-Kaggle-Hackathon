@@ -1,0 +1,195 @@
+{
+  "cardio_base": {
+    "path": "docs/drive-download-20260627T215828Z-3-001/Datasets/Cardiac Failure/cardio_base.csv",
+    "shape": [
+      70000,
+      13
+    ],
+    "columns": [
+      "id",
+      "age",
+      "gender",
+      "height",
+      "weight",
+      "ap_hi",
+      "ap_lo",
+      "cholesterol",
+      "gluc",
+      "smoke",
+      "alco",
+      "active",
+      "cardio"
+    ],
+    "target_counts": {
+      "0": 35021,
+      "1": 34979
+    },
+    "age_years": {
+      "min": 29.56331279945243,
+      "median": 53.94387405886379,
+      "max": 64.92265571526352
+    },
+    "bp_anomalies": {
+      "ap_hi_le_0": 7,
+      "ap_lo_le_0": 22,
+      "ap_hi_gt_250": 40,
+      "ap_lo_gt_200": 953,
+      "ap_lo_gt_ap_hi": 1234
+    },
+    "height_range": [
+      55,
+      250
+    ],
+    "weight_range": [
+      10.0,
+      200.0
+    ],
+    "missing_total": 0
+  },
+  "cardiac_failure_processed": {
+    "path": "docs/drive-download-20260627T215828Z-3-001/Datasets/Cardiac Failure/cardiac_failure_processed.csv",
+    "shape": [
+      70000,
+      14
+    ],
+    "columns": [
+      "Unnamed: 0",
+      "id",
+      "age",
+      "gender",
+      "height",
+      "weight",
+      "ap_hi",
+      "ap_lo",
+      "cholesterol",
+      "gluc",
+      "smoke",
+      "alco",
+      "active",
+      "cardio"
+    ],
+    "target_counts": {
+      "0": 35021,
+      "1": 34979
+    },
+    "age_scaled": {
+      "min": 0.0,
+      "median": 0.6895083236546651,
+      "max": 1.0
+    },
+    "bp_anomalies": {
+      "ap_hi_le_0": 7,
+      "ap_lo_le_0": 22,
+      "ap_hi_gt_250": 40,
+      "ap_lo_gt_200": 953,
+      "ap_lo_gt_ap_hi": 1234
+    }
+  },
+  "heart_processed": {
+    "path": "docs/drive-download-20260627T215828Z-3-001/Datasets/Heart Attack/heart_processed.csv",
+    "shape": [
+      918,
+      16
+    ],
+    "columns": [
+      "Age",
+      "RestingBP",
+      "Cholesterol",
+      "FastingBS",
+      "MaxHR",
+      "Oldpeak",
+      "HeartDisease",
+      "Sex_M",
+      "ChestPainType_ATA",
+      "ChestPainType_NAP",
+      "ChestPainType_TA",
+      "RestingECG_Normal",
+      "RestingECG_ST",
+      "ExerciseAngina_Y",
+      "ST_Slope_Flat",
+      "ST_Slope_Up"
+    ],
+    "target_counts": {
+      "1": 508,
+      "0": 410
+    },
+    "zero_resting_bp": 1,
+    "zero_cholesterol": 172,
+    "sex_m_counts": {
+      "True": 725,
+      "False": 193
+    },
+    "missing_total": 0
+  },
+  "ecg_timeseries_light": {
+    "path": "docs/drive-download-20260627T215828Z-3-001/Datasets/ECG Timeseries/ecg_timeseries.csv",
+    "file_size_mb": 626.9558706283569,
+    "header_len": 123995,
+    "first_header": [
+      "",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "last_header": [
+      "4037",
+      "4038",
+      "4039",
+      "4040",
+      "4041",
+      "4042",
+      "4043",
+      "4044"
+    ],
+    "row_count": 528,
+    "first_row_samples": [
+      {
+        "index_value": "1.000000000000000000e+00",
+        "first5": [
+          "0.9084249138832092",
+          "0.730088472366333",
+          "1.0",
+          "0.5704697966575624",
+          "1.0"
+        ],
+        "sample100_min": 0.05811138078570366,
+        "sample100_mean": 0.9432321555539965,
+        "sample100_max": 1.0
+      },
+      {
+        "index_value": "7.582644820213317871e-01",
+        "first5": [
+          "0.7838827967643738",
+          "0.21238937973976132",
+          "0.9104166626930237",
+          "0.3993288576602936",
+          "0.9236640930175779"
+        ],
+        "sample100_min": 0.11622276157140732,
+        "sample100_mean": 0.8014825799316168,
+        "sample100_max": 1.0
+      },
+      {
+        "index_value": "1.115702465176582336e-01",
+        "first5": [
+          "0.5311355590820312",
+          "0.0",
+          "0.6812499761581421",
+          "0.23825503885746",
+          "0.6564885377883911"
+        ],
+        "sample100_min": 0.0,
+        "sample100_mean": 0.41885883029550314,
+        "sample100_max": 0.7799999713897705
+      }
+    ],
+    "sampled_numeric_values": 66000,
+    "sampled_global_min": 0.0,
+    "sampled_global_mean": 0.313600982373695,
+    "sampled_global_max": 4.0
+  }
+}

@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.omx/
+.matplotlib_cache/
+.cache/
+
+# Generated artifacts
+outputs/models/
+
+# Large/raw competition data should be cited or attached as Kaggle resources, not committed blindly.
+docs/drive-download-20260627T215828Z-3-001/Datasets/

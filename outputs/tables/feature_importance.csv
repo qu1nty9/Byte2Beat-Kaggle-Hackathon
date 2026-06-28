@@ -1,0 +1,13 @@
+dataset,model,feature,importance_mean,importance_std
+cardio_clean,hist_gradient_boosting,ap_hi,0.18256179797069658,0.003409189852123769
+cardio_clean,hist_gradient_boosting,age_years,0.03917810535379228,0.0021734380900403083
+cardio_clean,hist_gradient_boosting,cholesterol,0.034534846479812975,0.0025758582944905004
+cardio_clean,hist_gradient_boosting,bmi,0.0041905542956002795,0.0007033909436818545
+cardio_clean,hist_gradient_boosting,ap_lo,0.003539831835241078,0.0007796962628673885
+cardio_clean,hist_gradient_boosting,weight,0.0022667039578350007,0.00021219237505235925
+cardio_clean,hist_gradient_boosting,active,0.0016622319736633445,0.00033314877654801504
+cardio_clean,hist_gradient_boosting,gluc,0.001492531134995423,0.0003343896588430344
+cardio_clean,hist_gradient_boosting,smoke,0.0010439383274383068,0.00018688866715595986
+cardio_clean,hist_gradient_boosting,height,0.0005297516623778559,0.00013359717810720222
+cardio_clean,hist_gradient_boosting,alco,0.0002346279225244885,0.0002612676679199547
+cardio_clean,hist_gradient_boosting,gender,0.00022791156714475902,0.0001540374873731334

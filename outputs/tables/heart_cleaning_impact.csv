@@ -1,0 +1,5 @@
+subset,rows,positive,negative,target_rate,rows_removed_vs_raw,removed_fraction_vs_raw
+raw,918,508,410,0.5533769063180828,0,0.0
+valid_resting_bp,917,507,410,0.5528898582333697,1,0.0010893246187363835
+cholesterol_observed,746,356,390,0.4772117962466488,172,0.18736383442265794
+valid_resting_bp_and_cholesterol_observed,746,356,390,0.4772117962466488,172,0.18736383442265794
