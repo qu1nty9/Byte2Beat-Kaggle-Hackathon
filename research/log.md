@@ -31,3 +31,7 @@ Created `.venv`, installed project dependencies, added reusable code under `src/
 ## [2026-06-28] audit | ECG schema gate
 
 Added `scripts/profile_ecg_schema.py` and generated `outputs/tables/ecg_schema_audit.json`. The ECG CSV has 123,995 columns, 528 rows, and 36,441 duplicate non-empty header names, confirming that ECG must remain a gated extension until row semantics and labels are understood.
+
+## [2026-06-28] robustness | Cleaning sensitivity analysis
+
+Added `scripts/cleaning_sensitivity.py` and shared cleaning profiles in `src/byte2beat/data.py`. Tested raw, lenient, current, and strict cardiac cleaning profiles with logistic regression and histogram gradient boosting. Current profile retained 68,605 rows and produced the best held-out boosting AUROC/Brier combination; boosting stayed stable around AUROC 0.80 across profiles, while raw outliers reduced logistic AUROC to 0.7776.

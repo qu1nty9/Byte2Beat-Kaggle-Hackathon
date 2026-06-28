@@ -39,6 +39,15 @@ Initial plausibility filter used in `scripts/eda_tabular.py`:
 
 This removes 1,395 rows, or 1.99% of the dataset. Target rate changes from 0.4997 to 0.4947.
 
+Sensitivity profiles show that neighboring cleaning choices retain similar target rates:
+
+- `raw`: 70,000 rows, target rate 0.4997.
+- `lenient`: 68,644 rows, target rate 0.4947.
+- `current`: 68,605 rows, target rate 0.4947.
+- `strict`: 68,362 rows, target rate 0.4950.
+
+This supports the current filter as a transparent plausibility rule rather than a performance-maximizing deletion scheme.
+
 Among plausibility-filtered rows, cardiovascular-positive rate rises strongly by systolic BP band:
 
 - `<120`: 0.2305.

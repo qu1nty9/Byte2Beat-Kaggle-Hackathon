@@ -50,6 +50,15 @@ Initial cardiac plausibility rules:
 
 This removes 1,395 of 70,000 rows, or 1.99%.
 
+We also run a sensitivity analysis across four profiles:
+
+- `raw`: no plausibility filtering.
+- `lenient`: broad plausibility rules.
+- `current`: primary rules used in the main model.
+- `strict`: stricter thresholds for robustness checking.
+
+The current profile is not treated as the only possible truth; it is tested against neighboring choices.
+
 ## EDA Findings
 
 After plausibility cleaning, observed cardio-positive rate rises sharply by systolic BP band:
@@ -94,6 +103,16 @@ Random forest is nearly tied, while logistic regression is slightly weaker but m
 - Random forest test AUROC: 0.8024.
 - Logistic regression test AUROC: 0.7931.
 
+Cleaning sensitivity:
+
+- Raw logistic regression AUROC: 0.7776.
+- Current logistic regression AUROC: 0.7931.
+- Raw histogram gradient boosting AUROC: 0.8004.
+- Current histogram gradient boosting AUROC: 0.8037.
+- Strict histogram gradient boosting AUROC: 0.7991.
+
+Interpretation: implausible raw values hurt the linear model more than the tree-based model. The selected boosting model remains stable around AUROC 0.80 across cleaning profiles, so the headline result does not depend on one fragile threshold set.
+
 ## Interpretability
 
 The first logistic baseline identified systolic BP, age, cholesterol, and diastolic BP as the largest standardized effects. This is clinically plausible and supports the project narrative that the model is learning recognizable cardiovascular risk structure.
@@ -109,6 +128,7 @@ The final interpretation should compare:
 - ECG modeling is not included in the headline result because the schema and labels are not yet validated.
 - The small heart dataset gives high AUROC, but this should be treated as a high-variance comparison rather than a primary claim.
 - More complex models improve over logistic regression, but the improvement is modest; the final story should not be a model-complexity story.
+- Strict cleaning does not improve performance, suggesting that removing more rows is not automatically better.
 
 ## Limitations
 
@@ -133,4 +153,3 @@ Core commands:
 ## AI Usage Disclosure
 
 Draft: AI assistance was used for coding support, project organization, documentation scaffolding, and visualization planning. The team remains responsible for the research question, interpretation, written submission, and final claims.
-

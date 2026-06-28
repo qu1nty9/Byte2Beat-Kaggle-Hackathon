@@ -20,6 +20,8 @@
 - `outputs/tables/heart_logreg_coefficients.csv`: standardized coefficients for the heart attack baseline.
 - `outputs/tables/model_comparison.csv`: sklearn model comparison across cardiac and heart datasets.
 - `outputs/tables/cross_validation_summary.csv`: 5-fold CV summary.
+- `outputs/tables/cleaning_sensitivity_metrics.csv`: raw/lenient/current/strict cleaning sensitivity metrics.
+- `outputs/tables/cleaning_sensitivity_cv.csv`: cross-validation summary for cleaning sensitivity profiles.
 - `outputs/tables/subgroup_metrics.csv`: subgroup metrics for selected cardiac model.
 - `outputs/tables/ecg_schema_audit.json`: lightweight schema audit for the large ECG CSV.
 - `outputs/figures/`: writeup-ready EDA, ROC/PR, calibration, and feature-importance figures.

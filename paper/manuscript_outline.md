@@ -14,6 +14,8 @@ Methods: Use the Byte2Beat cardiac and heart datasets; audit data quality; defin
 
 Results: Current foundation result on the cleaned cardiac dataset shows histogram gradient boosting test AUROC 0.8037 and 5-fold CV AUROC 0.8013 +/- 0.0025.
 
+Sensitivity: Cleaning-profile analysis shows histogram gradient boosting remains near AUROC 0.80 across raw, lenient, current, and strict profiles, while logistic regression is more sensitive to raw implausible values.
+
 Conclusion: Simple cardiovascular risk factors contain substantial predictive signal, but a credible biomedical ML workflow must foreground data quality, calibration, and limitations.
 
 ## Sections
@@ -41,4 +43,3 @@ Conclusion: Simple cardiovascular risk factors contain substantial predictive si
 - Add robustness checks for cleaning thresholds.
 - Add repeated CV or bootstrap intervals for the small heart dataset.
 - Ensure GitHub repository is clean and reproducible.
-

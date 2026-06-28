@@ -32,6 +32,7 @@ python -m venv .venv
 .venv/bin/python scripts/generate_eda_figures.py
 .venv/bin/python scripts/baseline_tabular_numpy.py
 .venv/bin/python scripts/model_comparison.py
+.venv/bin/python scripts/cleaning_sensitivity.py
 ```
 
 The scripts write audit tables, model metrics, calibration bins, subgroup metrics, and writeup-ready figures under `outputs/`.
@@ -54,6 +55,8 @@ On the plausibility-cleaned cardiac dataset, the current best sklearn model is `
 - 5-fold CV AUROC: 0.8013 +/- 0.0025.
 
 These are foundation results, not final claims. The project still needs deeper sensitivity analysis, calibration reporting, subgroup interpretation, and a polished Kaggle Writeup.
+
+Cleaning sensitivity is now included. The selected boosting model remains stable near AUROC 0.80 across raw, lenient, current, and strict cleaning profiles, while raw implausible values hurt logistic regression more clearly.
 
 ## Working Principle
 

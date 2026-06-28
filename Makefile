@@ -20,14 +20,16 @@ baseline:
 models:
 	$(PYTHON) scripts/model_comparison.py
 
+sensitivity:
+	$(PYTHON) scripts/cleaning_sensitivity.py
+
 ecg:
 	$(PYTHON) scripts/profile_ecg_schema.py
 
 notebook:
 	$(PYTHON) -m nbconvert --to notebook --execute --inplace notebooks/01_eda_and_baseline.ipynb
 
-all: audit eda baseline models ecg
+all: audit eda baseline models sensitivity ecg
 
 check:
 	$(PYTHON) -m py_compile scripts/*.py src/byte2beat/*.py
-

@@ -110,3 +110,43 @@ Generated artifacts:
 - `outputs/figures/pr_curves.png`
 - `outputs/figures/calibration_curve.png`
 - `outputs/figures/feature_importance.png`
+
+## Cleaning Sensitivity
+
+Generated with `scripts/cleaning_sensitivity.py`.
+
+Profiles:
+
+- `raw`: no plausibility filtering.
+- `lenient`: broad plausibility rules.
+- `current`: primary cleaning profile.
+- `strict`: stricter robustness profile.
+
+Rows retained:
+
+| Profile | Rows | Removed fraction | Target rate |
+|---|---:|---:|---:|
+| Raw | 70,000 | 0.0000 | 0.4997 |
+| Lenient | 68,644 | 0.0194 | 0.4947 |
+| Current | 68,605 | 0.0199 | 0.4947 |
+| Strict | 68,362 | 0.0234 | 0.4950 |
+
+Held-out AUROC:
+
+| Profile | Logistic regression | HistGradientBoosting |
+|---|---:|---:|
+| Raw | 0.7776 | 0.8004 |
+| Lenient | 0.7917 | 0.8025 |
+| Current | 0.7931 | 0.8037 |
+| Strict | 0.7891 | 0.7991 |
+
+Interpretation: the raw outliers meaningfully hurt logistic regression, but the boosting model remains stable around AUROC 0.80. The current profile gives the best held-out AUROC and Brier score for the selected model, while strict filtering removes more data without improving performance.
+
+Generated artifacts:
+
+- `outputs/tables/cleaning_sensitivity_summary.csv`
+- `outputs/tables/cleaning_sensitivity_metrics.csv`
+- `outputs/tables/cleaning_sensitivity_cv.csv`
+- `outputs/figures/cleaning_sensitivity_rows.png`
+- `outputs/figures/cleaning_sensitivity_auroc.png`
+- `outputs/figures/cleaning_sensitivity_brier.png`
