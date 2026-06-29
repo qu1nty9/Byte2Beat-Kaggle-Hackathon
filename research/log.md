@@ -67,3 +67,7 @@ Added `submission/final_kaggle_writeup.md` with the final title, subtitle, and a
 ## [2026-06-30] evaluation | Bootstrap uncertainty and threshold analysis
 
 Added `scripts/uncertainty_threshold_analysis.py` and generated bootstrap confidence intervals plus threshold trade-off tables and figures for the selected cardiac model. Main results: held-out AUROC 95% bootstrap interval is 0.7970-0.8103, AUPRC interval is 0.7796-0.7990, and lowering the decision threshold from 0.50 to 0.35 raises sensitivity from 0.6876 to 0.8329 while increasing false positives from 1,885 to 3,623.
+
+## [2026-06-30] release | Kaggle submission release layer
+
+Added `RELEASE_NOTES.md` and `submission/release_manifest.md` for the stable Kaggle submission snapshot. The planned release tag is `v1.0.0-kaggle-submission`; the manifest records Kaggle-facing assets, automated validation, manual checks that remain outside local verification, canonical results, and release guardrails.

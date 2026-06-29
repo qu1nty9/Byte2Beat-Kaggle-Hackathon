@@ -14,7 +14,9 @@
 
 ## Submission Package
 
+- `RELEASE_NOTES.md`: stable release notes for the Kaggle submission snapshot.
 - `submission/final_kaggle_writeup.md`: final Kaggle writeup text with author block and selected title/subtitle.
+- `submission/release_manifest.md`: release tag, validation status, required Kaggle-facing files, and manual checks.
 - `submission/kaggle_writeup_team_template.md`: team-authored writeup template with evidence pointers.
 - `submission/kaggle_writeup_review_draft.md`: review-ready Kaggle writeup draft with claim-to-evidence mapping.
 - `submission/data_card.md`: source, cleaning, risk, and use-boundary summary for the project data.
@@ -52,3 +54,4 @@
 - Lead direction: start with an interpretable cardiovascular risk modeling project on the tabular datasets, with ECG feature extraction as a novelty extension if labels and structure can be validated.
 - Primary deliverable: public Kaggle Writeup plus public reproducible notebook.
 - Secondary deliverable: article/preprint-style manuscript draft if results are strong enough and organizers are notified before public release.
+- Stable release target: `v1.0.0-kaggle-submission`.

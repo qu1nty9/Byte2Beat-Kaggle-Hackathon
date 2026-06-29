@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_ASSETS = [
     "README.md",
+    "RELEASE_NOTES.md",
     "requirements.txt",
     "Makefile",
     "notebooks/01_eda_and_baseline.ipynb",
@@ -28,6 +29,7 @@ REQUIRED_ASSETS = [
     "submission/kaggle_writeup_team_template.md",
     "submission/kaggle_writeup_review_draft.md",
     "submission/model_card.md",
+    "submission/release_manifest.md",
     "submission/result_cards.md",
     "submission/figure_manifest.md",
     "submission/final_submission_checklist.md",

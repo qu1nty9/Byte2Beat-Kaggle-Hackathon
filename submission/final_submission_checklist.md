@@ -39,6 +39,8 @@
 - [ ] Generated figures/tables needed for review are committed.
 - [ ] `make submission-check` passes without failures.
 - [ ] `Makefile` targets work: `make all`, `make check`.
+- [ ] Stable release tag exists: `v1.0.0-kaggle-submission`.
+- [ ] `RELEASE_NOTES.md` and `submission/release_manifest.md` are current.
 - [ ] GitHub repository is public or accessible to judges.
 
 ## Publication Path

@@ -9,6 +9,7 @@ Run `make submission-check` before publishing. It validates required files, resu
 ## Files
 
 - `final_kaggle_writeup.md`: final Kaggle writeup text with title, subtitle, author block, results, limitations, and disclosure.
+- `release_manifest.md`: stable release tag, validation status, Kaggle-facing files, and manual checks.
 - `kaggle_writeup_team_template.md`: section-by-section template with evidence to include.
 - `kaggle_writeup_review_draft.md`: review-ready scaffold for the final Kaggle writeup.
 - `data_card.md`: project data card with source, cleaning, risk, and use-boundary notes.
@@ -28,3 +29,5 @@ Run `make submission-check` before publishing. It validates required files, resu
 - Review-ready writeup draft: `submission/kaggle_writeup_review_draft.md`
 - AI disclosure draft: `research/ai_usage_disclosure.md`
 - Publication readiness: `paper/publication_readiness.md`
+- Release notes: `RELEASE_NOTES.md`
+- Release manifest: `submission/release_manifest.md`

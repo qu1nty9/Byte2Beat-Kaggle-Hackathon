@@ -65,6 +65,8 @@ Notebook roles:
 Submission writing assets:
 
 - `submission/final_kaggle_writeup.md`: final Kaggle writeup text with title, subtitle, and author block.
+- `RELEASE_NOTES.md`: stable release summary for the Kaggle submission snapshot.
+- `submission/release_manifest.md`: release tag, validation status, required assets, and manual checks.
 - `submission/kaggle_writeup_review_draft.md`: review-ready evidence-backed Kaggle writeup scaffold.
 - `submission/data_card.md`: project-level data card for sources, cleaning, risks, and intended use.
 - `submission/model_card.md`: selected model card with metrics, failure modes, and limitations.
@@ -89,6 +91,15 @@ Cleaning sensitivity is now included. The selected boosting model remains stable
 Error analysis is also included. The selected model misses many lower-BP positives and overcalls some high-BP negatives, which is central to the final limitations story.
 
 Uncertainty and threshold analysis are now included. The default 0.50 threshold gives sensitivity 0.6876 and specificity 0.7825; lowering the threshold to 0.35 raises sensitivity to 0.8329 but increases false positives from 1,885 to 3,623.
+
+## Release Snapshot
+
+Planned stable Kaggle release tag: `v1.0.0-kaggle-submission`.
+
+Release notes and manifest:
+
+- `RELEASE_NOTES.md`
+- `submission/release_manifest.md`
 
 ## Working Principle
 
