@@ -16,6 +16,8 @@ Results: Current foundation result on the cleaned cardiac dataset shows histogra
 
 Sensitivity: Cleaning-profile analysis shows histogram gradient boosting remains near AUROC 0.80 across raw, lenient, current, and strict profiles, while logistic regression is more sensitive to raw implausible values.
 
+Error analysis: False negatives concentrate among lower-BP positives, while false positives are more common among high-risk-looking negatives, especially high systolic BP and high cholesterol groups.
+
 Conclusion: Simple cardiovascular risk factors contain substantial predictive signal, but a credible biomedical ML workflow must foreground data quality, calibration, and limitations.
 
 ## Sections

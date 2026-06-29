@@ -6,6 +6,7 @@
 - [Source Inventory](source_inventory.md): competition documents, provided datasets, and provenance notes.
 - [Data Audit](data_audit.md): initial dataset profile and data-quality risks.
 - [Baseline Results](baseline_results.md): first self-contained tabular logistic-regression baseline.
+- [Error Analysis](error_analysis.md): false positive/false negative analysis for the selected cardiac model.
 - [Kaggle Writeup Draft](kaggle_writeup_draft.md): working draft for the final public Kaggle submission narrative.
 - [AI Usage Disclosure](ai_usage_disclosure.md): draft disclosure aligned with competition policy.
 - [Log](log.md): chronological record of work.
@@ -23,6 +24,8 @@
 - `outputs/tables/cleaning_sensitivity_metrics.csv`: raw/lenient/current/strict cleaning sensitivity metrics.
 - `outputs/tables/cleaning_sensitivity_cv.csv`: cross-validation summary for cleaning sensitivity profiles.
 - `outputs/tables/subgroup_metrics.csv`: subgroup metrics for selected cardiac model.
+- `outputs/tables/error_analysis_summary.csv`: confusion-type summary for the selected cardiac model.
+- `outputs/tables/error_analysis_by_group.csv`: false-positive/false-negative rates by clinical groups.
 - `outputs/tables/ecg_schema_audit.json`: lightweight schema audit for the large ECG CSV.
 - `outputs/figures/`: writeup-ready EDA, ROC/PR, calibration, and feature-importance figures.
 

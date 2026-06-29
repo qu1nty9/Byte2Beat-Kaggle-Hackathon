@@ -150,3 +150,7 @@ Generated artifacts:
 - `outputs/figures/cleaning_sensitivity_rows.png`
 - `outputs/figures/cleaning_sensitivity_auroc.png`
 - `outputs/figures/cleaning_sensitivity_brier.png`
+
+## Error Analysis Pointer
+
+Detailed false-positive and false-negative analysis is maintained in `research/error_analysis.md`. The main finding is that the selected boosting model is clinically intuitive but asymmetric: it misses many lower-BP positives and overcalls the minority of very high-BP negatives.

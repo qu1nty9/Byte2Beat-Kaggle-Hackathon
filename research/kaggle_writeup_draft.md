@@ -123,12 +123,25 @@ The final interpretation should compare:
 - Permutation importance from the selected model.
 - Subgroup reliability and calibration.
 
+## Error Analysis
+
+The selected cardiac model has asymmetric errors:
+
+- True negatives have lower mean age, systolic BP, BMI, and cholesterol.
+- False positives look clinically high-risk: mean age 56.7, mean systolic BP 133.4, mean BMI 29.1, mean cholesterol category 1.59.
+- False negatives look more borderline: mean systolic BP 118.1 and mean cholesterol category 1.17.
+- In the `<120` systolic BP band, false-negative rate among positives is 0.8596.
+- In the `>=140` systolic BP band, the model predicts positive for every held-out case, giving zero false negatives but a false-positive rate of 1.0000 among the few actual negatives.
+
+This is a useful limitation: the model learns recognizable cardiovascular risk structure, but it can miss lower-BP positives and overcall very high-BP negatives.
+
 ## What Did Not Work Yet
 
 - ECG modeling is not included in the headline result because the schema and labels are not yet validated.
 - The small heart dataset gives high AUROC, but this should be treated as a high-variance comparison rather than a primary claim.
 - More complex models improve over logistic regression, but the improvement is modest; the final story should not be a model-complexity story.
 - Strict cleaning does not improve performance, suggesting that removing more rows is not automatically better.
+- Error analysis shows the model leans heavily on blood pressure and cholesterol, producing asymmetric subgroup errors.
 
 ## Limitations
 

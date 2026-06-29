@@ -35,3 +35,7 @@ Added `scripts/profile_ecg_schema.py` and generated `outputs/tables/ecg_schema_a
 ## [2026-06-28] robustness | Cleaning sensitivity analysis
 
 Added `scripts/cleaning_sensitivity.py` and shared cleaning profiles in `src/byte2beat/data.py`. Tested raw, lenient, current, and strict cardiac cleaning profiles with logistic regression and histogram gradient boosting. Current profile retained 68,605 rows and produced the best held-out boosting AUROC/Brier combination; boosting stayed stable around AUROC 0.80 across profiles, while raw outliers reduced logistic AUROC to 0.7776.
+
+## [2026-06-29] evaluation | Error analysis for selected cardiac model
+
+Added `scripts/error_analysis.py` and generated confusion/error tables plus figures. Main finding: the selected boosting model misses many actual positives in low systolic BP bands and overcalls the minority of negatives in high systolic BP/high cholesterol groups. Added `research/error_analysis.md` and updated the Kaggle notebook/writeup draft.
