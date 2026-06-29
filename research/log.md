@@ -47,3 +47,7 @@ Added `submission/` package with team-facing writeup template, result cards, fig
 ## [2026-06-29] submission | Final Kaggle notebook draft
 
 Added `notebooks/02_final_kaggle_notebook.ipynb`, a polished submission-facing notebook that reads generated artifacts, presents the evidence flow, and can optionally regenerate the full pipeline. Added it to submission asset checks.
+
+## [2026-06-29] submission | Submission quality gate
+
+Expanded `scripts/check_submission_assets.py` from a presence-only check into a package quality gate. It now validates required assets, key table schemas, JSON audit evidence, figure readability and dimensions, notebook error outputs, final-notebook execution status, and private/local path leakage.

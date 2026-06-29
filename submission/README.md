@@ -4,6 +4,8 @@ This directory contains team-facing submission materials.
 
 Important policy note: Hack4Health rules state that final written submissions must be authored by the team. Treat these files as evidence organization, structure, and review scaffolding. The final Kaggle Writeup text should be rewritten and approved by the team before submission.
 
+Run `make submission-check` before publishing. It validates required files, result schemas, notebook execution status, figure readability, and notebook path hygiene.
+
 ## Files
 
 - `kaggle_writeup_team_template.md`: section-by-section template with evidence to include.

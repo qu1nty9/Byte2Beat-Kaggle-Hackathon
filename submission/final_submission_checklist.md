@@ -31,6 +31,7 @@
 - [ ] `requirements.txt` is current.
 - [ ] Raw large datasets are not committed.
 - [ ] Generated figures/tables needed for review are committed.
+- [ ] `make submission-check` passes without failures.
 - [ ] `Makefile` targets work: `make all`, `make check`.
 - [ ] GitHub repository is public or accessible to judges.
 

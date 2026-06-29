@@ -17,7 +17,7 @@
 - `submission/result_cards.md`: compact result cards for writing.
 - `submission/figure_manifest.md`: figure-to-claim mapping.
 - `submission/final_submission_checklist.md`: final review checklist.
-- `scripts/check_submission_assets.py`: verifies required submission assets exist.
+- `scripts/check_submission_assets.py`: validates required assets, result schemas, figures, notebook execution status, and notebook path hygiene.
 - `notebooks/02_final_kaggle_notebook.ipynb`: polished submission-facing notebook for Kaggle review.
 
 ## Generated Artifacts

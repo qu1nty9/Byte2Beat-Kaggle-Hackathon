@@ -53,6 +53,8 @@ For submission readiness checks:
 make submission-check
 ```
 
+This gate validates required assets, core result table schemas, JSON audit artifacts, required figures, notebook execution status, notebook error outputs, and private/local path leaks in notebooks.
+
 Notebook roles:
 
 - `notebooks/01_eda_and_baseline.ipynb`: working reproducible analysis notebook.

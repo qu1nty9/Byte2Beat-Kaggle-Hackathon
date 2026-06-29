@@ -212,11 +212,11 @@ make check
 
 Notebook:
 
-- `notebooks/01_eda_and_baseline.ipynb`
+- Preferred public notebook: `notebooks/02_final_kaggle_notebook.ipynb`.
+- Working reproducibility notebook: `notebooks/01_eda_and_baseline.ipynb`.
 
 ## 13. AI Usage Disclosure
 
 Use/adapt `research/ai_usage_disclosure.md`.
 
 The team should state actual AI use honestly and ensure final written submission is authored/reviewed by the team.
-

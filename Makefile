@@ -1,7 +1,7 @@
 PYTHON ?= .venv/bin/python
 PIP ?= .venv/bin/pip
 
-.PHONY: setup audit eda baseline models ecg notebook all check
+.PHONY: setup audit eda baseline models sensitivity errors submission-check ecg notebook final-notebook all check
 
 setup:
 	python -m venv .venv
@@ -34,6 +34,9 @@ ecg:
 
 notebook:
 	$(PYTHON) -m nbconvert --to notebook --execute --inplace notebooks/01_eda_and_baseline.ipynb
+
+final-notebook:
+	$(PYTHON) -m nbconvert --to notebook --execute --inplace notebooks/02_final_kaggle_notebook.ipynb
 
 all: audit eda baseline models sensitivity errors ecg
 
