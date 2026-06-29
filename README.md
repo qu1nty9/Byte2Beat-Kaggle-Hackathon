@@ -19,6 +19,7 @@ This repository is the working area for a Kaggle Byte2Beat / Hack4Health project
 - `outputs/`: generated tables, figures, model artifacts, and audit outputs.
 - `paper/`: optional manuscript/preprint outline.
 - `demo/`: optional educational demo scaffold.
+- `submission/`: team-facing Kaggle submission template, result cards, figure manifest, and final checklist.
 
 ## Quickstart
 
@@ -44,6 +45,12 @@ Equivalent Makefile commands:
 make setup
 make all
 make check
+```
+
+For submission readiness checks:
+
+```bash
+make submission-check
 ```
 
 ## Current Baseline

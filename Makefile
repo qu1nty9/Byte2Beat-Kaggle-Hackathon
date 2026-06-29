@@ -26,6 +26,9 @@ sensitivity:
 errors:
 	$(PYTHON) scripts/error_analysis.py
 
+submission-check:
+	$(PYTHON) scripts/check_submission_assets.py
+
 ecg:
 	$(PYTHON) scripts/profile_ecg_schema.py
 
@@ -36,3 +39,4 @@ all: audit eda baseline models sensitivity errors ecg
 
 check:
 	$(PYTHON) -m py_compile scripts/*.py src/byte2beat/*.py
+	$(PYTHON) scripts/check_submission_assets.py

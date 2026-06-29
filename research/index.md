@@ -11,6 +11,14 @@
 - [AI Usage Disclosure](ai_usage_disclosure.md): draft disclosure aligned with competition policy.
 - [Log](log.md): chronological record of work.
 
+## Submission Package
+
+- `submission/kaggle_writeup_team_template.md`: team-authored writeup template with evidence pointers.
+- `submission/result_cards.md`: compact result cards for writing.
+- `submission/figure_manifest.md`: figure-to-claim mapping.
+- `submission/final_submission_checklist.md`: final review checklist.
+- `scripts/check_submission_assets.py`: verifies required submission assets exist.
+
 ## Generated Artifacts
 
 - `outputs/tables/data_audit.json`: machine-readable output from `scripts/profile_data.py`.
