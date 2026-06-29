@@ -20,6 +20,8 @@ REQUIRED_ASSETS = [
     "research/kaggle_writeup_draft.md",
     "research/ai_usage_disclosure.md",
     "paper/manuscript_outline.md",
+    "paper/publication_readiness.md",
+    "submission/claims_ledger.md",
     "submission/kaggle_writeup_team_template.md",
     "submission/result_cards.md",
     "submission/figure_manifest.md",
@@ -123,6 +125,11 @@ PRIVATE_PATH_PATTERNS = [
     re.compile(r"[A-Za-z]:\\\\Users\\\\"),
 ]
 
+CLAIMS_LEDGER_PATH = ROOT / "submission/claims_ledger.md"
+CLAIM_ARTIFACT_PATTERN = re.compile(
+    r"`((?:outputs|research|submission|paper|notebooks|scripts)/[^`]+)`"
+)
+
 
 def _relative(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
@@ -183,6 +190,29 @@ def check_json_artifacts() -> list[str]:
 
     if "duplicate_nonempty_header_count" not in ecg_audit:
         failures.append("ecg_schema_audit.json lacks duplicate-header evidence")
+
+    return failures
+
+
+def check_claims_ledger() -> list[str]:
+    failures: list[str] = []
+    if not CLAIMS_LEDGER_PATH.exists():
+        return ["Missing claims ledger: submission/claims_ledger.md"]
+
+    text = CLAIMS_LEDGER_PATH.read_text(encoding="utf-8")
+    required_sections = [
+        "## Supported Core Claims",
+        "## Claims Requiring Extra Work",
+        "## Required Final Review Questions",
+    ]
+    for section in required_sections:
+        if section not in text:
+            failures.append(f"claims_ledger.md is missing section: {section}")
+
+    referenced_artifacts = sorted(set(CLAIM_ARTIFACT_PATTERN.findall(text)))
+    for artifact in referenced_artifacts:
+        if not (ROOT / artifact).exists():
+            failures.append(f"claims_ledger.md references missing artifact: {artifact}")
 
     return failures
 
@@ -265,6 +295,7 @@ def main() -> None:
         ("required assets", check_required_assets),
         ("tables", check_tables),
         ("json artifacts", check_json_artifacts),
+        ("claims ledger", check_claims_ledger),
         ("figures", check_figures),
         ("notebooks", check_notebooks),
     ]

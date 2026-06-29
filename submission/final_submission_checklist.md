@@ -12,6 +12,7 @@
 - [ ] Main model result includes AUROC, AUPRC, Brier score, and CV result.
 - [ ] Calibration is discussed, not only discrimination.
 - [ ] Error analysis includes false positives and false negatives.
+- [ ] Every major claim has an evidence pointer in `submission/claims_ledger.md`.
 - [ ] Limitations are explicit and medically cautious.
 - [ ] AI usage disclosure is included and accurate.
 
@@ -40,3 +41,4 @@
 - [ ] Decide whether this is Kaggle-only, blog, GitHub release, or preprint.
 - [ ] Notify Hack4Health organizers before broader public publication if required.
 - [ ] Verify dataset citation and license requirements.
+- [ ] Complete `paper/publication_readiness.md` before any preprint or article submission.

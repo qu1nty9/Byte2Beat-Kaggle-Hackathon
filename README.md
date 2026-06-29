@@ -19,7 +19,7 @@ This repository is the working area for a Kaggle Byte2Beat / Hack4Health project
 - `outputs/`: generated tables, figures, model artifacts, and audit outputs.
 - `paper/`: optional manuscript/preprint outline.
 - `demo/`: optional educational demo scaffold.
-- `submission/`: team-facing Kaggle submission template, result cards, figure manifest, and final checklist.
+- `submission/`: team-facing Kaggle submission template, result cards, claims ledger, figure manifest, and final checklist.
 
 ## Quickstart
 
@@ -54,6 +54,7 @@ make submission-check
 ```
 
 This gate validates required assets, core result table schemas, JSON audit artifacts, required figures, notebook execution status, notebook error outputs, and private/local path leaks in notebooks.
+It also checks that the claims ledger points only to existing evidence artifacts.
 
 Notebook roles:
 

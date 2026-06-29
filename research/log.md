@@ -51,3 +51,7 @@ Added `notebooks/02_final_kaggle_notebook.ipynb`, a polished submission-facing n
 ## [2026-06-29] submission | Submission quality gate
 
 Expanded `scripts/check_submission_assets.py` from a presence-only check into a package quality gate. It now validates required assets, key table schemas, JSON audit evidence, figure readability and dimensions, notebook error outputs, final-notebook execution status, and private/local path leakage.
+
+## [2026-06-29] submission | Claims and publication guardrails
+
+Added `submission/claims_ledger.md` to map final writeup claims to concrete evidence artifacts and to separate safe wording from overclaims. Added `paper/publication_readiness.md` to track the extra work required before any blog, preprint, or article publication.
