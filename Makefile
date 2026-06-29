@@ -1,7 +1,7 @@
 PYTHON ?= .venv/bin/python
 PIP ?= .venv/bin/pip
 
-.PHONY: setup audit eda baseline models sensitivity errors submission-check ecg notebook final-notebook all check
+.PHONY: setup audit eda baseline models sensitivity errors uncertainty submission-check ecg notebook final-notebook all check
 
 setup:
 	python -m venv .venv
@@ -26,6 +26,9 @@ sensitivity:
 errors:
 	$(PYTHON) scripts/error_analysis.py
 
+uncertainty:
+	$(PYTHON) scripts/uncertainty_threshold_analysis.py
+
 submission-check:
 	$(PYTHON) scripts/check_submission_assets.py
 
@@ -38,7 +41,7 @@ notebook:
 final-notebook:
 	$(PYTHON) -m nbconvert --to notebook --execute --inplace notebooks/02_final_kaggle_notebook.ipynb
 
-all: audit eda baseline models sensitivity errors ecg
+all: audit eda baseline models sensitivity errors uncertainty ecg
 
 check:
 	$(PYTHON) -m py_compile scripts/*.py src/byte2beat/*.py

@@ -35,6 +35,7 @@ python -m venv .venv
 .venv/bin/python scripts/model_comparison.py
 .venv/bin/python scripts/cleaning_sensitivity.py
 .venv/bin/python scripts/error_analysis.py
+.venv/bin/python scripts/uncertainty_threshold_analysis.py
 ```
 
 The scripts write audit tables, model metrics, calibration bins, subgroup metrics, and writeup-ready figures under `outputs/`.
@@ -75,7 +76,9 @@ Submission writing assets:
 On the plausibility-cleaned cardiac dataset, the current best sklearn model is `hist_gradient_boosting`:
 
 - Held-out test AUROC: 0.8037.
+- Bootstrap 95% AUROC interval: 0.7970-0.8103.
 - Held-out test AUPRC: 0.7892.
+- Bootstrap 95% AUPRC interval: 0.7796-0.7990.
 - Held-out test Brier score: 0.1795.
 - 5-fold CV AUROC: 0.8013 +/- 0.0025.
 
@@ -84,6 +87,8 @@ These are foundation results, not final claims. The project still needs deeper s
 Cleaning sensitivity is now included. The selected boosting model remains stable near AUROC 0.80 across raw, lenient, current, and strict cleaning profiles, while raw implausible values hurt logistic regression more clearly.
 
 Error analysis is also included. The selected model misses many lower-BP positives and overcalls some high-BP negatives, which is central to the final limitations story.
+
+Uncertainty and threshold analysis are now included. The default 0.50 threshold gives sensitivity 0.6876 and specificity 0.7825; lowering the threshold to 0.35 raises sensitivity to 0.8329 but increases false positives from 1,885 to 3,623.
 
 ## Working Principle
 

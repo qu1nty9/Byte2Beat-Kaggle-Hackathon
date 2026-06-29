@@ -111,6 +111,39 @@ Generated artifacts:
 - `outputs/figures/calibration_curve.png`
 - `outputs/figures/feature_importance.png`
 
+## Bootstrap Uncertainty and Threshold Analysis
+
+Generated with `scripts/uncertainty_threshold_analysis.py`.
+
+Held-out bootstrap 95% intervals for the selected model:
+
+| Metric | Point estimate | 95% interval |
+|---|---:|---:|
+| AUROC | 0.8037 | 0.7970-0.8103 |
+| AUPRC | 0.7892 | 0.7796-0.7990 |
+| Accuracy | 0.7355 | 0.7290-0.7425 |
+| Brier score | 0.1795 | 0.1765-0.1825 |
+
+Threshold operating-point summary:
+
+| Operating point | Threshold | Sensitivity | Specificity | FP | FN |
+|---|---:|---:|---:|---:|---:|
+| Default | 0.50 | 0.6876 | 0.7825 | 1,885 | 2,651 |
+| Max F1 / sensitivity >= 0.80 | 0.35 | 0.8329 | 0.5820 | 3,623 | 1,418 |
+| Specificity >= 0.80 | 0.55 | 0.6451 | 0.8215 | 1,547 | 3,011 |
+
+Interpretation: the aggregate held-out metric estimates are stable under bootstrap resampling, but decision-threshold choice materially changes false-positive and false-negative trade-offs.
+
+Generated artifacts:
+
+- `outputs/tables/selected_model_bootstrap_ci.csv`
+- `outputs/tables/selected_model_bootstrap_distribution.csv`
+- `outputs/tables/selected_model_threshold_analysis.csv`
+- `outputs/tables/selected_model_threshold_summary.csv`
+- `outputs/figures/selected_model_bootstrap_ci.png`
+- `outputs/figures/selected_model_threshold_tradeoff.png`
+- `outputs/figures/selected_model_threshold_counts.png`
+
 ## Cleaning Sensitivity
 
 Generated with `scripts/cleaning_sensitivity.py`.

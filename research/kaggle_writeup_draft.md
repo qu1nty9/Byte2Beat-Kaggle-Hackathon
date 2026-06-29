@@ -113,6 +113,23 @@ Cleaning sensitivity:
 
 Interpretation: implausible raw values hurt the linear model more than the tree-based model. The selected boosting model remains stable around AUROC 0.80 across cleaning profiles, so the headline result does not depend on one fragile threshold set.
 
+## Uncertainty and Threshold Analysis
+
+Bootstrap resampling of held-out predictions gives:
+
+- AUROC 95% interval: 0.7970-0.8103.
+- AUPRC 95% interval: 0.7796-0.7990.
+- Accuracy 95% interval: 0.7290-0.7425.
+- Brier score 95% interval: 0.1765-0.1825.
+
+Threshold trade-offs:
+
+- Default threshold 0.50: sensitivity 0.6876, specificity 0.7825, FP 1,885, FN 2,651.
+- Threshold 0.35: sensitivity 0.8329, specificity 0.5820, FP 3,623, FN 1,418.
+- Threshold 0.55: sensitivity 0.6451, specificity 0.8215, FP 1,547, FN 3,011.
+
+Interpretation: threshold tuning changes the false-positive/false-negative balance substantially. These are illustrative operating points, not clinical recommendations.
+
 ## Interpretability
 
 The first logistic baseline identified systolic BP, age, cholesterol, and diastolic BP as the largest standardized effects. This is clinically plausible and supports the project narrative that the model is learning recognizable cardiovascular risk structure.

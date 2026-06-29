@@ -33,6 +33,15 @@ Selected cardiac model: `hist_gradient_boosting`.
 | Test Brier score | 0.1795 |
 | 5-fold CV AUROC | 0.8013 +/- 0.0025 |
 
+Bootstrap 95% intervals:
+
+| Metric | 95% interval |
+|---|---:|
+| AUROC | 0.7970-0.8103 |
+| AUPRC | 0.7796-0.7990 |
+| Accuracy | 0.7290-0.7425 |
+| Brier score | 0.1765-0.1825 |
+
 ## Model Comparison Card
 
 Held-out test AUROC on current cleaned cardiac data:
@@ -73,3 +82,12 @@ Failure modes:
 - `>=140` systolic BP band: false-positive rate among negatives is 1.0000.
 - Cholesterol category `3`: false-positive rate among negatives is 0.8508.
 
+## Threshold Card
+
+Selected operating points:
+
+| Operating point | Threshold | Sensitivity | Specificity | FP | FN |
+|---|---:|---:|---:|---:|---:|
+| Default | 0.50 | 0.6876 | 0.7825 | 1,885 | 2,651 |
+| Max F1 / sensitivity >= 0.80 | 0.35 | 0.8329 | 0.5820 | 3,623 | 1,418 |
+| Specificity >= 0.80 | 0.55 | 0.6451 | 0.8215 | 1,547 | 3,011 |

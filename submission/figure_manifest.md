@@ -14,6 +14,9 @@ Use this to decide which figures enter the Kaggle Writeup and public notebook.
 | `outputs/figures/model_comparison_auroc.png` | Results | Boosting/random forest modestly outperform logistic regression. |
 | `outputs/figures/roc_curves.png` | Results | All non-dummy models rank risk above baseline. |
 | `outputs/figures/pr_curves.png` | Results | Precision-recall performance supports the same model ranking. |
+| `outputs/figures/selected_model_bootstrap_ci.png` | Uncertainty | Held-out metrics have narrow bootstrap 95% intervals. |
+| `outputs/figures/selected_model_threshold_tradeoff.png` | Threshold analysis | Sensitivity, specificity, precision, and F1 shift materially with the decision threshold. |
+| `outputs/figures/selected_model_threshold_counts.png` | Threshold analysis | False-positive and false-negative counts trade off across thresholds. |
 | `outputs/figures/calibration_curve.png` | Calibration | Selected model is reasonably calibrated in decile bins. |
 | `outputs/figures/feature_importance.png` | Interpretability | Predictive signal is dominated by recognizable cardiovascular factors. |
 | `outputs/figures/error_confusion_matrix.png` | Error analysis | Aggregate errors are balanced enough to inspect further. |
@@ -28,7 +31,8 @@ Recommended final writeup set if space is limited:
 2. `cardio_target_by_bp_band.png`
 3. `cleaning_sensitivity_auroc.png`
 4. `model_comparison_auroc.png`
-5. `calibration_curve.png`
-6. `feature_importance.png`
-7. `error_type_by_bp_band.png`
-
+5. `selected_model_bootstrap_ci.png`
+6. `selected_model_threshold_tradeoff.png`
+7. `calibration_curve.png`
+8. `feature_importance.png`
+9. `error_type_by_bp_band.png`

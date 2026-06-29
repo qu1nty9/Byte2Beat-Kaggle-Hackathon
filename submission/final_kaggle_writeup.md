@@ -119,6 +119,21 @@ On the current cleaned cardiac dataset:
 
 The selected model has 5-fold CV AUROC 0.8013 +/- 0.0025. Random forest is nearly tied, and logistic regression is only about 0.01 AUROC behind the selected model. This supports a conservative interpretation: the project is mainly about data quality and reliability, not about a dramatic model-complexity breakthrough.
 
+## Uncertainty and Threshold Analysis
+
+Bootstrap resampling of the held-out test predictions gives narrow 95 percent intervals for the selected model:
+
+| Metric | Point estimate | Bootstrap 95% interval |
+|---|---:|---:|
+| AUROC | 0.8037 | 0.7970-0.8103 |
+| AUPRC | 0.7892 | 0.7796-0.7990 |
+| Accuracy | 0.7355 | 0.7290-0.7425 |
+| Brier score | 0.1795 | 0.1765-0.1825 |
+
+The default threshold of 0.50 gives sensitivity 0.6876, specificity 0.7825, precision 0.7558, and F1 0.7201. Lowering the threshold to 0.35 maximizes F1 in this grid and raises sensitivity to 0.8329, but it also increases false positives from 1,885 to 3,623. Raising the threshold to 0.55 gives specificity 0.8215 and reduces false positives to 1,547, but false negatives increase to 3,011.
+
+This threshold analysis reinforces the main limitation: there is no universally correct operating point in this dataset. A screening-oriented setting might prefer higher sensitivity, while a setting that penalizes false alarms might prefer higher specificity. Because this project is not a clinical tool, the threshold analysis is reported as an interpretability and reliability exercise rather than as a deployment recommendation.
+
 ## Cleaning Sensitivity
 
 Held-out AUROC by cleaning profile:
@@ -201,10 +216,15 @@ Key evidence files:
 - `outputs/tables/model_comparison.csv`
 - `outputs/tables/cross_validation_summary.csv`
 - `outputs/tables/cleaning_sensitivity_metrics.csv`
+- `outputs/tables/selected_model_bootstrap_ci.csv`
+- `outputs/tables/selected_model_threshold_analysis.csv`
+- `outputs/tables/selected_model_threshold_summary.csv`
 - `outputs/tables/error_analysis_summary.csv`
 - `outputs/tables/error_analysis_by_group.csv`
 - `outputs/figures/model_comparison_auroc.png`
 - `outputs/figures/cleaning_sensitivity_auroc.png`
+- `outputs/figures/selected_model_bootstrap_ci.png`
+- `outputs/figures/selected_model_threshold_tradeoff.png`
 - `outputs/figures/calibration_curve.png`
 - `outputs/figures/feature_importance.png`
 - `outputs/figures/error_type_by_bp_band.png`
@@ -215,9 +235,11 @@ Key evidence files:
 2. `outputs/figures/cardio_target_by_bp_band.png`
 3. `outputs/figures/cleaning_sensitivity_auroc.png`
 4. `outputs/figures/model_comparison_auroc.png`
-5. `outputs/figures/calibration_curve.png`
-6. `outputs/figures/feature_importance.png`
-7. `outputs/figures/error_type_by_bp_band.png`
+5. `outputs/figures/selected_model_bootstrap_ci.png`
+6. `outputs/figures/selected_model_threshold_tradeoff.png`
+7. `outputs/figures/calibration_curve.png`
+8. `outputs/figures/feature_importance.png`
+9. `outputs/figures/error_type_by_bp_band.png`
 
 ## AI Usage Disclosure
 

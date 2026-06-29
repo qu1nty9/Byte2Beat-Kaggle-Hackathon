@@ -7,6 +7,7 @@
 - [Data Audit](data_audit.md): initial dataset profile and data-quality risks.
 - [Baseline Results](baseline_results.md): first self-contained tabular logistic-regression baseline.
 - [Error Analysis](error_analysis.md): false positive/false negative analysis for the selected cardiac model.
+- [Uncertainty and Threshold Analysis](uncertainty_threshold_analysis.md): bootstrap intervals and operating-point trade-offs for the selected cardiac model.
 - [Kaggle Writeup Draft](kaggle_writeup_draft.md): working draft for the final public Kaggle submission narrative.
 - [AI Usage Disclosure](ai_usage_disclosure.md): draft disclosure aligned with competition policy.
 - [Log](log.md): chronological record of work.
@@ -38,6 +39,8 @@
 - `outputs/tables/cross_validation_summary.csv`: 5-fold CV summary.
 - `outputs/tables/cleaning_sensitivity_metrics.csv`: raw/lenient/current/strict cleaning sensitivity metrics.
 - `outputs/tables/cleaning_sensitivity_cv.csv`: cross-validation summary for cleaning sensitivity profiles.
+- `outputs/tables/selected_model_bootstrap_ci.csv`: bootstrap 95% intervals for selected model metrics.
+- `outputs/tables/selected_model_threshold_summary.csv`: selected operating-point trade-offs for threshold choices.
 - `outputs/tables/subgroup_metrics.csv`: subgroup metrics for selected cardiac model.
 - `outputs/tables/error_analysis_summary.csv`: confusion-type summary for the selected cardiac model.
 - `outputs/tables/error_analysis_by_group.csv`: false-positive/false-negative rates by clinical groups.

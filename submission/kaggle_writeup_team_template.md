@@ -152,7 +152,26 @@ Figures/tables:
 - `outputs/tables/feature_importance.csv`
 - `outputs/figures/feature_importance.png`
 
-## 9. Error Analysis
+## 9. Uncertainty and Threshold Analysis
+
+Core points:
+
+- Bootstrap intervals on held-out predictions quantify metric uncertainty.
+- Selected model AUROC 95% bootstrap interval: 0.7970-0.8103.
+- Selected model AUPRC 95% bootstrap interval: 0.7796-0.7990.
+- Default threshold 0.50 gives sensitivity 0.6876 and specificity 0.7825.
+- Threshold 0.35 raises sensitivity to 0.8329 but increases false positives from 1,885 to 3,623.
+- Threshold 0.55 raises specificity to 0.8215 but increases false negatives to 3,011.
+- These thresholds are illustrative operating-point trade-offs, not clinical recommendations.
+
+Figures/tables:
+
+- `outputs/tables/selected_model_bootstrap_ci.csv`
+- `outputs/tables/selected_model_threshold_summary.csv`
+- `outputs/figures/selected_model_bootstrap_ci.png`
+- `outputs/figures/selected_model_threshold_tradeoff.png`
+
+## 10. Error Analysis
 
 Core points:
 
@@ -180,7 +199,7 @@ Figures/tables:
 - `outputs/tables/error_analysis_summary.csv`
 - `outputs/tables/error_analysis_by_group.csv`
 
-## 10. What Did Not Work
+## 11. What Did Not Work
 
 Include:
 
@@ -189,7 +208,7 @@ Include:
 - More complex models only modestly outperform logistic regression.
 - Strict cleaning removes more data without improving performance.
 
-## 11. Limitations
+## 12. Limitations
 
 Include:
 
@@ -200,7 +219,7 @@ Include:
 - Model is educational/research only.
 - Subgroup errors remain meaningful.
 
-## 12. Reproducibility
+## 13. Reproducibility
 
 Commands:
 
@@ -215,7 +234,7 @@ Notebook:
 - Preferred public notebook: `notebooks/02_final_kaggle_notebook.ipynb`.
 - Working reproducibility notebook: `notebooks/01_eda_and_baseline.ipynb`.
 
-## 13. AI Usage Disclosure
+## 14. AI Usage Disclosure
 
 Use/adapt `research/ai_usage_disclosure.md`.
 

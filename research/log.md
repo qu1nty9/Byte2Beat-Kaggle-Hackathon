@@ -63,3 +63,7 @@ Added `submission/kaggle_writeup_review_draft.md` as an evidence-backed Kaggle w
 ## [2026-06-30] submission | Final writeup, data card, and model card
 
 Added `submission/final_kaggle_writeup.md` with the final title, subtitle, and author block for Yaroslav Kholmirzayev. Added `submission/data_card.md` and `submission/model_card.md` to document dataset risks, intended use, model performance, robustness, failure modes, and limitations. Expanded the submission quality gate to validate the final writeup and cards.
+
+## [2026-06-30] evaluation | Bootstrap uncertainty and threshold analysis
+
+Added `scripts/uncertainty_threshold_analysis.py` and generated bootstrap confidence intervals plus threshold trade-off tables and figures for the selected cardiac model. Main results: held-out AUROC 95% bootstrap interval is 0.7970-0.8103, AUPRC interval is 0.7796-0.7990, and lowering the decision threshold from 0.50 to 0.35 raises sensitivity from 0.6876 to 0.8329 while increasing false positives from 1,885 to 3,623.

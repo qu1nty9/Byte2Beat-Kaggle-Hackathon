@@ -129,6 +129,14 @@ On the current cleaned cardiac dataset:
 
 The selected model has 5-fold CV AUROC 0.8013 +/- 0.0025. This narrow variation suggests that the result is not a lucky split artifact.
 
+## Uncertainty and Threshold Analysis
+
+Bootstrap resampling of held-out predictions gives AUROC 95% interval 0.7970-0.8103 and AUPRC interval 0.7796-0.7990. Accuracy interval is 0.7290-0.7425 and Brier score interval is 0.1765-0.1825.
+
+At the default threshold 0.50, sensitivity is 0.6876 and specificity is 0.7825. Lowering the threshold to 0.35 raises sensitivity to 0.8329 but increases false positives from 1,885 to 3,623. Raising the threshold to 0.55 increases specificity to 0.8215 but increases false negatives to 3,011.
+
+This should be interpreted as an illustrative operating-point trade-off, not as a clinical recommendation.
+
 ## Cleaning Sensitivity
 
 Held-out AUROC by cleaning profile:
@@ -243,6 +251,8 @@ Use seven figures if Kaggle space allows:
 | Plausibility cleaning removes a small, transparent subset. | `outputs/tables/cardio_cleaning_impact.csv`, `outputs/figures/cardio_cleaning_flow.png` |
 | Blood pressure has strong target structure. | `outputs/tables/cardio_target_by_bp_band.csv`, `outputs/figures/cardio_target_by_bp_band.png` |
 | Boosting is the selected model but only modestly beats logistic regression. | `outputs/tables/model_comparison.csv`, `outputs/figures/model_comparison_auroc.png` |
+| Bootstrap intervals quantify held-out metric uncertainty. | `outputs/tables/selected_model_bootstrap_ci.csv`, `outputs/figures/selected_model_bootstrap_ci.png` |
+| Threshold choice changes false-positive and false-negative trade-offs. | `outputs/tables/selected_model_threshold_summary.csv`, `outputs/figures/selected_model_threshold_tradeoff.png` |
 | Headline performance is not fragile to one cleaning profile. | `outputs/tables/cleaning_sensitivity_metrics.csv`, `outputs/figures/cleaning_sensitivity_auroc.png` |
 | The model has meaningful asymmetric error modes. | `outputs/tables/error_analysis_by_group.csv`, `outputs/figures/error_type_by_bp_band.png` |
 | ECG is not yet suitable for headline modeling. | `outputs/tables/ecg_schema_audit.json`, `research/data_audit.md` |

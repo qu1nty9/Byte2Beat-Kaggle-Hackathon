@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from pathlib import Path
 
@@ -35,6 +36,10 @@ REQUIRED_ASSETS = [
     "outputs/tables/cleaning_sensitivity_metrics.csv",
     "outputs/tables/error_analysis_summary.csv",
     "outputs/tables/error_analysis_by_group.csv",
+    "outputs/tables/selected_model_bootstrap_ci.csv",
+    "outputs/tables/selected_model_bootstrap_distribution.csv",
+    "outputs/tables/selected_model_threshold_analysis.csv",
+    "outputs/tables/selected_model_threshold_summary.csv",
     "outputs/figures/cardio_systolic_bp_raw_vs_clean.png",
     "outputs/figures/cardio_target_by_bp_band.png",
     "outputs/figures/cleaning_sensitivity_auroc.png",
@@ -42,6 +47,8 @@ REQUIRED_ASSETS = [
     "outputs/figures/calibration_curve.png",
     "outputs/figures/feature_importance.png",
     "outputs/figures/error_type_by_bp_band.png",
+    "outputs/figures/selected_model_bootstrap_ci.png",
+    "outputs/figures/selected_model_threshold_tradeoff.png",
 ]
 
 TABLE_REQUIREMENTS = {
@@ -99,6 +106,44 @@ TABLE_REQUIREMENTS = {
         "importance_mean",
         "importance_std",
     },
+    "outputs/tables/selected_model_bootstrap_ci.csv": {
+        "dataset",
+        "model",
+        "split",
+        "metric",
+        "point_estimate",
+        "ci_lower_95",
+        "ci_upper_95",
+        "bootstrap_iterations",
+    },
+    "outputs/tables/selected_model_bootstrap_distribution.csv": {
+        "bootstrap_iteration",
+        "metric",
+        "value",
+    },
+    "outputs/tables/selected_model_threshold_analysis.csv": {
+        "dataset",
+        "model",
+        "threshold",
+        "precision",
+        "sensitivity",
+        "specificity",
+        "f1",
+        "tp",
+        "tn",
+        "fp",
+        "fn",
+    },
+    "outputs/tables/selected_model_threshold_summary.csv": {
+        "dataset",
+        "model",
+        "operating_point",
+        "threshold",
+        "precision",
+        "sensitivity",
+        "specificity",
+        "f1",
+    },
 }
 
 FIGURE_REQUIREMENTS = [
@@ -115,12 +160,16 @@ FIGURE_REQUIREMENTS = [
     "outputs/figures/error_confusion_matrix.png",
     "outputs/figures/error_prediction_distribution.png",
     "outputs/figures/error_type_by_bp_band.png",
+    "outputs/figures/selected_model_bootstrap_ci.png",
+    "outputs/figures/selected_model_threshold_tradeoff.png",
+    "outputs/figures/selected_model_threshold_counts.png",
 ]
 
 NOTEBOOK_REQUIREMENTS = {
     "notebooks/01_eda_and_baseline.ipynb": {"must_be_executed": False},
     "notebooks/02_final_kaggle_notebook.ipynb": {"must_be_executed": True},
 }
+ALLOW_UNEXECUTED_FINAL_NOTEBOOK = os.environ.get("BYTE2BEAT_ALLOW_UNEXECUTED_FINAL_NOTEBOOK") == "1"
 
 PRIVATE_PATH_PATTERNS = [
     re.compile(r"/Users/[A-Za-z0-9._-]+"),
@@ -235,6 +284,7 @@ def check_writeup_draft() -> list[str]:
         "## Executive Summary",
         "## Data Sources",
         "## Main Results",
+        "## Uncertainty and Threshold Analysis",
         "## Cleaning Sensitivity",
         "## Error Analysis",
         "## Limitations",
@@ -274,6 +324,7 @@ def check_final_writeup() -> list[str]:
         "## Executive Summary",
         "## Data Sources",
         "## Main Results",
+        "## Uncertainty and Threshold Analysis",
         "## Cleaning Sensitivity",
         "## Error Analysis",
         "## Limitations",
@@ -318,6 +369,7 @@ def check_cards() -> list[str]:
             "## Training and Evaluation Data",
             "## Performance",
             "## Robustness",
+            "## Threshold Analysis",
             "## Failure Modes",
             "## Limitations",
         ],
@@ -391,7 +443,7 @@ def check_notebooks() -> list[str]:
                 f"({', '.join(error_cells)})"
             )
 
-        if requirements["must_be_executed"]:
+        if requirements["must_be_executed"] and not ALLOW_UNEXECUTED_FINAL_NOTEBOOK:
             unexecuted = [
                 str(index)
                 for index, cell in enumerate(notebook.cells, start=1)

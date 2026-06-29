@@ -12,6 +12,8 @@
 - [ ] Cleaning rules include counts removed.
 - [ ] Sensitivity analysis explains why the result is not threshold-fragile.
 - [ ] Main model result includes AUROC, AUPRC, Brier score, and CV result.
+- [ ] Bootstrap confidence intervals are reported for key held-out metrics.
+- [ ] Threshold analysis is described as illustrative, not as a clinical operating recommendation.
 - [ ] Calibration is discussed, not only discrimination.
 - [ ] Error analysis includes false positives and false negatives.
 - [ ] Every major claim has an evidence pointer in `submission/claims_ledger.md`.

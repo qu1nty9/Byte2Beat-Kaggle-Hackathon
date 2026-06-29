@@ -97,6 +97,15 @@ Cross-validation:
 
 - 5-fold CV AUROC: 0.8013 +/- 0.0025.
 
+Bootstrap 95 percent intervals on held-out predictions:
+
+| Metric | Point estimate | 95% interval |
+|---|---:|---:|
+| AUROC | 0.8037 | 0.7970-0.8103 |
+| AUPRC | 0.7892 | 0.7796-0.7990 |
+| Accuracy | 0.7355 | 0.7290-0.7425 |
+| Brier score | 0.1795 | 0.1765-0.1825 |
+
 Model comparison:
 
 - Random forest AUROC: 0.8024.
@@ -119,6 +128,22 @@ Interpretation:
 - The selected model remains near AUROC 0.80 across neighboring cleaning choices.
 - Logistic regression is more sensitive to raw implausible values.
 - Strict cleaning removes more data without improving performance.
+
+## Threshold Analysis
+
+Selected operating points from a 0.10-0.90 threshold grid:
+
+| Operating point | Threshold | Sensitivity | Specificity | Precision | F1 | FP | FN |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Default | 0.50 | 0.6876 | 0.7825 | 0.7558 | 0.7201 | 1,885 | 2,651 |
+| Max F1 / sensitivity >= 0.80 | 0.35 | 0.8329 | 0.5820 | 0.6611 | 0.7371 | 3,623 | 1,418 |
+| Specificity >= 0.80 | 0.55 | 0.6451 | 0.8215 | 0.7797 | 0.7060 | 1,547 | 3,011 |
+
+Interpretation:
+
+- Lower thresholds reduce false negatives but increase false positives.
+- Higher thresholds reduce false positives but increase false negatives.
+- No threshold is recommended for deployment; this is an educational operating-point analysis.
 
 ## Interpretability
 
@@ -183,4 +208,6 @@ Primary code and evidence:
 - `outputs/tables/model_comparison.csv`
 - `outputs/tables/cross_validation_summary.csv`
 - `outputs/tables/cleaning_sensitivity_metrics.csv`
+- `outputs/tables/selected_model_bootstrap_ci.csv`
+- `outputs/tables/selected_model_threshold_analysis.csv`
 - `outputs/tables/error_analysis_by_group.csv`

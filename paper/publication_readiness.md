@@ -74,6 +74,8 @@ Reference seed links:
 | Data audit | `research/data_audit.md`, `outputs/tables/data_audit.json` |
 | Cleaning sensitivity | `outputs/tables/cleaning_sensitivity_metrics.csv`, `outputs/figures/cleaning_sensitivity_auroc.png` |
 | Model comparison | `outputs/tables/model_comparison.csv`, `outputs/tables/cross_validation_summary.csv` |
+| Bootstrap uncertainty | `outputs/tables/selected_model_bootstrap_ci.csv`, `outputs/figures/selected_model_bootstrap_ci.png` |
+| Threshold trade-offs | `outputs/tables/selected_model_threshold_summary.csv`, `outputs/figures/selected_model_threshold_tradeoff.png` |
 | Calibration | `outputs/tables/cardio_clean_calibration_bins.csv`, `outputs/figures/calibration_curve.png` |
 | Interpretability | `outputs/tables/feature_importance.csv`, `outputs/tables/cardio_logreg_coefficients.csv`, `outputs/figures/feature_importance.png` |
 | Error analysis | `research/error_analysis.md`, `outputs/tables/error_analysis_by_group.csv`, `outputs/figures/error_type_by_bp_band.png` |
@@ -91,7 +93,7 @@ Objective: Evaluate how plausibility checks, model choice, calibration, and subg
 
 Methods: Audit Byte2Beat tabular datasets, define transparent plausibility filters, compare dummy baseline, logistic regression, decision tree, random forest, and histogram gradient boosting, and evaluate discrimination, calibration, sensitivity to cleaning thresholds, and error patterns.
 
-Results: The selected histogram gradient boosting model reaches held-out AUROC 0.8037, AUPRC 0.7892, accuracy 0.7355, and Brier score 0.1795 on the cleaned cardiac dataset. 5-fold CV AUROC is 0.8013 +/- 0.0025. Performance remains near AUROC 0.80 across cleaning profiles, while logistic regression is more sensitive to raw implausible values.
+Results: The selected histogram gradient boosting model reaches held-out AUROC 0.8037, AUPRC 0.7892, accuracy 0.7355, and Brier score 0.1795 on the cleaned cardiac dataset. 5-fold CV AUROC is 0.8013 +/- 0.0025. Bootstrap 95% intervals are 0.7970-0.8103 for AUROC and 0.7796-0.7990 for AUPRC. Performance remains near AUROC 0.80 across cleaning profiles, while logistic regression is more sensitive to raw implausible values.
 
 Conclusion: Public cardiovascular tabular data can support moderate predictive performance, but responsible reporting should foreground data quality, calibration, and failure modes rather than only model score.
 
@@ -127,6 +129,8 @@ Include:
 - Split strategy and leakage controls.
 - Model classes and hyperparameter summary.
 - Metrics and why each matters.
+- Bootstrap interval method.
+- Threshold-grid analysis and operating-point caveat.
 - Calibration method.
 - Error and subgroup analysis definitions.
 
@@ -137,8 +141,9 @@ Minimum tables:
 1. Data audit summary.
 2. Cleaning profile comparison.
 3. Model comparison.
-4. Cross-validation summary.
-5. Error analysis by subgroup.
+4. Cross-validation and bootstrap interval summary.
+5. Threshold operating-point summary.
+6. Error analysis by subgroup.
 
 Minimum figures:
 
@@ -146,9 +151,11 @@ Minimum figures:
 2. Target rate by systolic BP band.
 3. Cleaning sensitivity AUROC.
 4. Model comparison AUROC.
-5. Calibration curve.
-6. Feature importance.
-7. Error type by BP band.
+5. Bootstrap metric intervals.
+6. Threshold trade-off curve.
+7. Calibration curve.
+8. Feature importance.
+9. Error type by BP band.
 
 ### Discussion
 
@@ -196,7 +203,7 @@ Draft statement:
 - Add a related-work section with at least 10-15 sources.
 - Re-run `make all`, `make check`, and `make submission-check` from a clean clone or fresh environment.
 - Add random seed and software-version table.
-- Consider bootstrap confidence intervals for selected metrics.
+- Bootstrap confidence intervals for selected cardiac metrics are complete; add intervals for any new external or secondary result.
 - Add external validation only if a clearly compatible public dataset is identified.
 - Confirm author list, author contributions, and acknowledgments.
 - Notify Hack4Health organizers before public preprint or blog release if required by the rules.
@@ -206,7 +213,7 @@ Draft statement:
 - Add repeated cross-validation or bootstrap confidence intervals for the small `heart_processed.csv` comparison.
 - Decide whether the heart dataset remains an appendix or a secondary result.
 - Add a stricter written rationale for plausibility thresholds.
-- Consider a compact threshold analysis for clinical operating points, clearly marked as illustrative.
+- Compact selected-model threshold analysis is complete and marked as illustrative; any clinical operating point would require an explicit cost matrix and deployment context.
 - If ECG is included, validate row semantics, labels, and linkage before any supervised claim.
 
 ## Work Needed Before Journal Submission
@@ -217,7 +224,7 @@ Draft statement:
 - Add external validation or clearly frame the study as internal validation only.
 - Add a fuller missingness and measurement-artifact analysis.
 - Create a data dictionary for every modeling feature.
-- Add confidence intervals for major metrics.
+- Add confidence intervals for any new or external-validation metrics.
 - Add a reproducibility appendix with exact commands and environment details.
 
 ## Manuscript Guardrails
