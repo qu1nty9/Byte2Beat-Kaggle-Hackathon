@@ -4,11 +4,11 @@ Use this as a structure and evidence map. Rewrite the final prose in the team's 
 
 ## Title
 
-Suggested title: Data Quality-Aware Cardiovascular Risk Modeling
+Suggested title: From Byte to Beat: Auditing Cardiovascular Risk Before Modeling It
 
 ## Subtitle
 
-Suggested subtitle: An interpretable workflow showing how plausibility checks, calibration, and error analysis change cardiovascular risk prediction.
+Suggested subtitle: A data-quality-first Byte2Beat workflow where plausibility checks, calibration, and failure-mode analysis matter as much as AUROC.
 
 ## 1. Problem Framing
 

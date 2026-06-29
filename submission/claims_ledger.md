@@ -2,7 +2,7 @@
 
 Use this file as the final review map before writing or publishing. It separates claims that are supported by current evidence from claims that would overstate the project.
 
-The final Kaggle Writeup should be written by the team. This ledger is an evidence and guardrail artifact, not final prose to copy verbatim.
+The final Kaggle Writeup should be reviewed and approved by the author. This ledger is an evidence and guardrail artifact, not final prose to copy verbatim.
 
 ## Supported Core Claims
 
@@ -37,6 +37,6 @@ The final Kaggle Writeup should be written by the team. This ledger is an eviden
 - Does every numeric claim map to a generated table or figure?
 - Are all medical claims phrased as predictive associations, not causal or diagnostic statements?
 - Does the writeup state that the model is educational/research only?
-- Does the AI usage disclosure match the team's actual workflow?
+- Does the AI usage disclosure match the author's actual workflow?
 - Does `make submission-check` pass after the final notebook and writeup are updated?
 - Has the team checked Hack4Health publication/visibility requirements before any non-Kaggle publication?

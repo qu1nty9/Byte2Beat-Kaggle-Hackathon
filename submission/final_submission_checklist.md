@@ -2,7 +2,8 @@
 
 ## Kaggle Writeup
 
-- [ ] Final text rewritten by the team, not copied directly from AI-generated scaffolding.
+- [ ] Final text reviewed and approved by the author, not copied blindly from scaffolding.
+- [ ] `submission/final_kaggle_writeup.md` has the final title, subtitle, and author block.
 - [ ] `submission/kaggle_writeup_review_draft.md` has been reviewed against the final artifacts.
 - [ ] Title and subtitle are concise.
 - [ ] Problem framing is clear in the first paragraph.
@@ -14,6 +15,7 @@
 - [ ] Calibration is discussed, not only discrimination.
 - [ ] Error analysis includes false positives and false negatives.
 - [ ] Every major claim has an evidence pointer in `submission/claims_ledger.md`.
+- [ ] `submission/data_card.md` and `submission/model_card.md` are aligned with the final writeup.
 - [ ] Limitations are explicit and medically cautious.
 - [ ] AI usage disclosure is included and accurate.
 

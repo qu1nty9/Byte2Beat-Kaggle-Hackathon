@@ -12,7 +12,7 @@ The project is close to a strong Kaggle submission because it has a reproducible
 
 Working title:
 
-> Data Quality-Aware Cardiovascular Risk Modeling Across Public Tabular Health Datasets
+> From Byte to Beat: Auditing Cardiovascular Risk Before Modeling It
 
 Core contribution:
 

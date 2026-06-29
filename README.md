@@ -63,7 +63,10 @@ Notebook roles:
 
 Submission writing assets:
 
+- `submission/final_kaggle_writeup.md`: final Kaggle writeup text with title, subtitle, and author block.
 - `submission/kaggle_writeup_review_draft.md`: review-ready evidence-backed Kaggle writeup scaffold.
+- `submission/data_card.md`: project-level data card for sources, cleaning, risks, and intended use.
+- `submission/model_card.md`: selected model card with metrics, failure modes, and limitations.
 - `submission/claims_ledger.md`: claim-by-claim evidence map and overclaiming guardrails.
 - `paper/publication_readiness.md`: arXiv/journal path, reporting-guideline alignment, and publication prerequisites.
 

@@ -6,7 +6,7 @@ This is the canonical operating plan for the Byte2Beat project. It is written fo
 
 ### Working Title
 
-Data Quality-Aware and Interpretable Cardiovascular Risk Modeling Across Public Tabular Health Datasets
+From Byte to Beat: Auditing Cardiovascular Risk Before Modeling It
 
 ### Core Research Question
 
@@ -661,4 +661,3 @@ scripts/evaluate_subgroups.py
 The final project should say:
 
 > In cardiovascular ML, simple risk-factor models can perform surprisingly well, but the real work is validating the data and understanding reliability. We show that transparent plausibility checks, calibration, and subgroup/error analysis produce a more trustworthy risk-modeling workflow than score-only modeling. The resulting model is not a clinical tool, but a reproducible demonstration of how biomedical AI projects should handle noisy public health data.
-

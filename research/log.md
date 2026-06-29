@@ -59,3 +59,7 @@ Added `submission/claims_ledger.md` to map final writeup claims to concrete evid
 ## [2026-06-29] submission | Review-ready writeup and publication plan
 
 Added `submission/kaggle_writeup_review_draft.md` as an evidence-backed Kaggle writeup scaffold and expanded `paper/publication_readiness.md` into the arXiv/journal readiness plan. Added the review draft to the submission quality gate, including section and evidence-link validation, and linked it from project documentation.
+
+## [2026-06-30] submission | Final writeup, data card, and model card
+
+Added `submission/final_kaggle_writeup.md` with the final title, subtitle, and author block for Yaroslav Kholmirzayev. Added `submission/data_card.md` and `submission/model_card.md` to document dataset risks, intended use, model performance, robustness, failure modes, and limitations. Expanded the submission quality gate to validate the final writeup and cards.

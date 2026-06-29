@@ -2,11 +2,11 @@
 
 ## Title
 
-Data Quality-Aware Cardiovascular Risk Modeling
+From Byte to Beat: Auditing Cardiovascular Risk Before Modeling It
 
 ## Subtitle
 
-An interpretable machine-learning workflow showing how plausibility checks, calibration, and subgroup analysis change cardiovascular risk prediction.
+A data-quality-first Byte2Beat workflow where plausibility checks, calibration, and failure-mode analysis matter as much as AUROC.
 
 ## Problem Framing
 

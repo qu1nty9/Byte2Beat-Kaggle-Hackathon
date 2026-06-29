@@ -2,7 +2,7 @@
 
 ## Working Title
 
-Data Quality-Aware Cardiovascular Risk Modeling Across Public Tabular Health Datasets
+From Byte to Beat: Auditing Cardiovascular Risk Before Modeling It
 
 ## Abstract Skeleton
 

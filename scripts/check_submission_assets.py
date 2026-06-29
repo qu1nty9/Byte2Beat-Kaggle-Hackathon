@@ -22,8 +22,11 @@ REQUIRED_ASSETS = [
     "paper/manuscript_outline.md",
     "paper/publication_readiness.md",
     "submission/claims_ledger.md",
+    "submission/data_card.md",
+    "submission/final_kaggle_writeup.md",
     "submission/kaggle_writeup_team_template.md",
     "submission/kaggle_writeup_review_draft.md",
+    "submission/model_card.md",
     "submission/result_cards.md",
     "submission/figure_manifest.md",
     "submission/final_submission_checklist.md",
@@ -127,7 +130,10 @@ PRIVATE_PATH_PATTERNS = [
 ]
 
 CLAIMS_LEDGER_PATH = ROOT / "submission/claims_ledger.md"
+FINAL_WRITEUP_PATH = ROOT / "submission/final_kaggle_writeup.md"
 WRITEUP_DRAFT_PATH = ROOT / "submission/kaggle_writeup_review_draft.md"
+DATA_CARD_PATH = ROOT / "submission/data_card.md"
+MODEL_CARD_PATH = ROOT / "submission/model_card.md"
 CLAIM_ARTIFACT_PATTERN = re.compile(
     r"`((?:outputs|research|submission|paper|notebooks|scripts)/[^`]+)`"
 )
@@ -254,6 +260,79 @@ def check_writeup_draft() -> list[str]:
     return failures
 
 
+def check_final_writeup() -> list[str]:
+    failures: list[str] = []
+    if not FINAL_WRITEUP_PATH.exists():
+        return ["Missing final writeup: submission/final_kaggle_writeup.md"]
+
+    text = FINAL_WRITEUP_PATH.read_text(encoding="utf-8")
+    required_sections = [
+        "# From Byte to Beat: Auditing Cardiovascular Risk Before Modeling It",
+        "## A data-quality-first Byte2Beat workflow",
+        "Author: Yaroslav Kholmirzayev",
+        "Contact: yaric.kholm@gmail.com",
+        "## Executive Summary",
+        "## Data Sources",
+        "## Main Results",
+        "## Cleaning Sensitivity",
+        "## Error Analysis",
+        "## Limitations",
+        "## Reproducibility",
+        "## AI Usage Disclosure",
+    ]
+    for section in required_sections:
+        if section not in text:
+            failures.append(f"final_kaggle_writeup.md is missing: {section}")
+
+    banned_fragments = ["[TEAM REVIEW]", "Status: review-ready scaffold"]
+    for fragment in banned_fragments:
+        if fragment in text:
+            failures.append(f"final_kaggle_writeup.md contains placeholder: {fragment}")
+
+    referenced_artifacts = sorted(set(CLAIM_ARTIFACT_PATTERN.findall(text)))
+    for artifact in referenced_artifacts:
+        if not (ROOT / artifact).exists():
+            failures.append(
+                f"final_kaggle_writeup.md references missing artifact: {artifact}"
+            )
+
+    return failures
+
+
+def check_cards() -> list[str]:
+    failures: list[str] = []
+    card_requirements = {
+        DATA_CARD_PATH: [
+            "# Data Card",
+            "## Data Sources",
+            "## Unit of Analysis",
+            "## Target",
+            "## Known Data Quality Issues",
+            "## Intended Use",
+            "## Ethical and Publication Notes",
+        ],
+        MODEL_CARD_PATH: [
+            "# Model Card",
+            "## Model Type",
+            "## Intended Use",
+            "## Training and Evaluation Data",
+            "## Performance",
+            "## Robustness",
+            "## Failure Modes",
+            "## Limitations",
+        ],
+    }
+    for path, sections in card_requirements.items():
+        if not path.exists():
+            failures.append(f"Missing card: {_relative(path)}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        for section in sections:
+            if section not in text:
+                failures.append(f"{_relative(path)} is missing section: {section}")
+    return failures
+
+
 def check_figures() -> list[str]:
     failures: list[str] = []
     for relative_path in FIGURE_REQUIREMENTS:
@@ -334,6 +413,8 @@ def main() -> None:
         ("json artifacts", check_json_artifacts),
         ("claims ledger", check_claims_ledger),
         ("writeup draft", check_writeup_draft),
+        ("final writeup", check_final_writeup),
+        ("cards", check_cards),
         ("figures", check_figures),
         ("notebooks", check_notebooks),
     ]

@@ -1,14 +1,14 @@
 # Kaggle Writeup Review Draft
 
-Status: review-ready scaffold. The final Kaggle text must be reviewed, edited, and approved by the team before submission.
+Status: review-ready scaffold. The final Kaggle text must be reviewed, edited, and approved by the author before submission.
 
 ## Title
 
-Data Quality-Aware Cardiovascular Risk Modeling
+From Byte to Beat: Auditing Cardiovascular Risk Before Modeling It
 
 ## Subtitle
 
-An interpretable Byte2Beat workflow showing how plausibility checks, calibration, and error analysis change cardiovascular risk prediction.
+A data-quality-first Byte2Beat workflow where plausibility checks, calibration, and failure-mode analysis matter as much as AUROC.
 
 ## Executive Summary
 
@@ -249,14 +249,14 @@ Use seven figures if Kaggle space allows:
 
 ## AI Usage Disclosure
 
-Generative AI tools were used to support code scaffolding, reproducibility setup, documentation structure, visualization planning, and internal research-note drafting. AI tools were not used as the core source of the research idea or main hypothesis. The final written submission, scientific interpretation, and claims must be reviewed and authored by the team before submission.
+Generative AI tools were used to support code scaffolding, reproducibility setup, documentation structure, visualization planning, and internal research-note drafting. AI tools were not used as the core source of the research idea or main hypothesis. The final written submission, scientific interpretation, and claims must be reviewed and authored by the author before submission.
 
 ## Final Team Review Tasks
 
-- Rewrite the final Kaggle prose in the team's own voice.
+- Rewrite the final Kaggle prose in the author's own voice.
 - Confirm all numbers against the final generated artifacts.
 - Choose the final figure set and upload/render it in Kaggle.
 - Verify raw-data access path in the public notebook.
 - Confirm that no clinical deployment claim is made.
-- Adapt the AI usage disclosure to the team's actual workflow.
+- Adapt the AI usage disclosure to the author's actual workflow.
 - Notify Hack4Health organizers before broader public publication if required.
