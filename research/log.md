@@ -55,3 +55,7 @@ Expanded `scripts/check_submission_assets.py` from a presence-only check into a 
 ## [2026-06-29] submission | Claims and publication guardrails
 
 Added `submission/claims_ledger.md` to map final writeup claims to concrete evidence artifacts and to separate safe wording from overclaims. Added `paper/publication_readiness.md` to track the extra work required before any blog, preprint, or article publication.
+
+## [2026-06-29] submission | Review-ready writeup and publication plan
+
+Added `submission/kaggle_writeup_review_draft.md` as an evidence-backed Kaggle writeup scaffold and expanded `paper/publication_readiness.md` into the arXiv/journal readiness plan. Added the review draft to the submission quality gate, including section and evidence-link validation, and linked it from project documentation.

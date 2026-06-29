@@ -17,7 +17,7 @@ This repository is the working area for a Kaggle Byte2Beat / Hack4Health project
 - `src/byte2beat/`: reusable project code.
 - `notebooks/`: Kaggle/Colab-style notebooks for EDA, baselines, and final public notebook drafts.
 - `outputs/`: generated tables, figures, model artifacts, and audit outputs.
-- `paper/`: optional manuscript/preprint outline.
+- `paper/`: optional manuscript/preprint outline and publication readiness notes.
 - `demo/`: optional educational demo scaffold.
 - `submission/`: team-facing Kaggle submission template, result cards, claims ledger, figure manifest, and final checklist.
 
@@ -54,12 +54,18 @@ make submission-check
 ```
 
 This gate validates required assets, core result table schemas, JSON audit artifacts, required figures, notebook execution status, notebook error outputs, and private/local path leaks in notebooks.
-It also checks that the claims ledger points only to existing evidence artifacts.
+It also checks that the claims ledger and review-ready writeup point only to existing evidence artifacts.
 
 Notebook roles:
 
 - `notebooks/01_eda_and_baseline.ipynb`: working reproducible analysis notebook.
 - `notebooks/02_final_kaggle_notebook.ipynb`: polished submission-facing notebook for Kaggle review.
+
+Submission writing assets:
+
+- `submission/kaggle_writeup_review_draft.md`: review-ready evidence-backed Kaggle writeup scaffold.
+- `submission/claims_ledger.md`: claim-by-claim evidence map and overclaiming guardrails.
+- `paper/publication_readiness.md`: arXiv/journal path, reporting-guideline alignment, and publication prerequisites.
 
 ## Current Baseline
 

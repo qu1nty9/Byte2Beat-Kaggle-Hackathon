@@ -14,11 +14,12 @@
 ## Submission Package
 
 - `submission/kaggle_writeup_team_template.md`: team-authored writeup template with evidence pointers.
+- `submission/kaggle_writeup_review_draft.md`: review-ready Kaggle writeup draft with claim-to-evidence mapping.
 - `submission/result_cards.md`: compact result cards for writing.
 - `submission/claims_ledger.md`: claim-by-claim evidence map and overclaiming guardrails.
 - `submission/figure_manifest.md`: figure-to-claim mapping.
 - `submission/final_submission_checklist.md`: final review checklist.
-- `scripts/check_submission_assets.py`: validates required assets, result schemas, claims-ledger evidence links, figures, notebook execution status, and notebook path hygiene.
+- `scripts/check_submission_assets.py`: validates required assets, result schemas, claims-ledger and writeup evidence links, figures, notebook execution status, and notebook path hygiene.
 - `notebooks/02_final_kaggle_notebook.ipynb`: polished submission-facing notebook for Kaggle review.
 - `paper/publication_readiness.md`: preprint/article readiness gate and publication guardrails.
 

@@ -3,6 +3,7 @@
 ## Kaggle Writeup
 
 - [ ] Final text rewritten by the team, not copied directly from AI-generated scaffolding.
+- [ ] `submission/kaggle_writeup_review_draft.md` has been reviewed against the final artifacts.
 - [ ] Title and subtitle are concise.
 - [ ] Problem framing is clear in the first paragraph.
 - [ ] Data sources and provenance are described.
@@ -39,6 +40,7 @@
 ## Publication Path
 
 - [ ] Decide whether this is Kaggle-only, blog, GitHub release, or preprint.
+- [ ] Review `paper/publication_readiness.md` before any public release beyond Kaggle.
 - [ ] Notify Hack4Health organizers before broader public publication if required.
 - [ ] Verify dataset citation and license requirements.
 - [ ] Complete `paper/publication_readiness.md` before any preprint or article submission.

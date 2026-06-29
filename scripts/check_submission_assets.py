@@ -23,6 +23,7 @@ REQUIRED_ASSETS = [
     "paper/publication_readiness.md",
     "submission/claims_ledger.md",
     "submission/kaggle_writeup_team_template.md",
+    "submission/kaggle_writeup_review_draft.md",
     "submission/result_cards.md",
     "submission/figure_manifest.md",
     "submission/final_submission_checklist.md",
@@ -126,6 +127,7 @@ PRIVATE_PATH_PATTERNS = [
 ]
 
 CLAIMS_LEDGER_PATH = ROOT / "submission/claims_ledger.md"
+WRITEUP_DRAFT_PATH = ROOT / "submission/kaggle_writeup_review_draft.md"
 CLAIM_ARTIFACT_PATTERN = re.compile(
     r"`((?:outputs|research|submission|paper|notebooks|scripts)/[^`]+)`"
 )
@@ -217,6 +219,41 @@ def check_claims_ledger() -> list[str]:
     return failures
 
 
+def check_writeup_draft() -> list[str]:
+    failures: list[str] = []
+    if not WRITEUP_DRAFT_PATH.exists():
+        return ["Missing writeup draft: submission/kaggle_writeup_review_draft.md"]
+
+    text = WRITEUP_DRAFT_PATH.read_text(encoding="utf-8")
+    required_sections = [
+        "## Executive Summary",
+        "## Data Sources",
+        "## Main Results",
+        "## Cleaning Sensitivity",
+        "## Error Analysis",
+        "## Limitations",
+        "## Reproducibility",
+        "## Claim-to-Evidence Map",
+        "## AI Usage Disclosure",
+        "## Final Team Review Tasks",
+    ]
+    for section in required_sections:
+        if section not in text:
+            failures.append(
+                f"kaggle_writeup_review_draft.md is missing section: {section}"
+            )
+
+    referenced_artifacts = sorted(set(CLAIM_ARTIFACT_PATTERN.findall(text)))
+    for artifact in referenced_artifacts:
+        if not (ROOT / artifact).exists():
+            failures.append(
+                "kaggle_writeup_review_draft.md references missing artifact: "
+                f"{artifact}"
+            )
+
+    return failures
+
+
 def check_figures() -> list[str]:
     failures: list[str] = []
     for relative_path in FIGURE_REQUIREMENTS:
@@ -296,6 +333,7 @@ def main() -> None:
         ("tables", check_tables),
         ("json artifacts", check_json_artifacts),
         ("claims ledger", check_claims_ledger),
+        ("writeup draft", check_writeup_draft),
         ("figures", check_figures),
         ("notebooks", check_notebooks),
     ]
