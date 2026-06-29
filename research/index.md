@@ -18,6 +18,7 @@
 - `submission/figure_manifest.md`: figure-to-claim mapping.
 - `submission/final_submission_checklist.md`: final review checklist.
 - `scripts/check_submission_assets.py`: verifies required submission assets exist.
+- `notebooks/02_final_kaggle_notebook.ipynb`: polished submission-facing notebook for Kaggle review.
 
 ## Generated Artifacts
 

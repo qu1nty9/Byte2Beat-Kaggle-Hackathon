@@ -53,6 +53,11 @@ For submission readiness checks:
 make submission-check
 ```
 
+Notebook roles:
+
+- `notebooks/01_eda_and_baseline.ipynb`: working reproducible analysis notebook.
+- `notebooks/02_final_kaggle_notebook.ipynb`: polished submission-facing notebook for Kaggle review.
+
 ## Current Baseline
 
 On the plausibility-cleaned cardiac dataset, the current best sklearn model is `hist_gradient_boosting`:

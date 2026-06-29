@@ -43,3 +43,7 @@ Added `scripts/error_analysis.py` and generated confusion/error tables plus figu
 ## [2026-06-29] submission | Kaggle submission scaffold
 
 Added `submission/` package with team-facing writeup template, result cards, figure manifest, final checklist, and submission asset checker. This is intentionally a scaffold rather than final prose because the competition rules require the final written submission to be authored and reviewed by the team.
+
+## [2026-06-29] submission | Final Kaggle notebook draft
+
+Added `notebooks/02_final_kaggle_notebook.ipynb`, a polished submission-facing notebook that reads generated artifacts, presents the evidence flow, and can optionally regenerate the full pipeline. Added it to submission asset checks.

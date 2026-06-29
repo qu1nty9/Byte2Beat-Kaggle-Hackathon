@@ -10,6 +10,7 @@ REQUIRED_ASSETS = [
     "requirements.txt",
     "Makefile",
     "notebooks/01_eda_and_baseline.ipynb",
+    "notebooks/02_final_kaggle_notebook.ipynb",
     "research/kaggle_writeup_draft.md",
     "research/ai_usage_disclosure.md",
     "submission/kaggle_writeup_team_template.md",
@@ -43,4 +44,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

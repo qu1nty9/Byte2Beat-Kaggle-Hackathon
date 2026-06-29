@@ -14,7 +14,7 @@ Important policy note: Hack4Health rules state that final written submissions mu
 ## Related Assets
 
 - Public notebook draft: `notebooks/01_eda_and_baseline.ipynb`
+- Polished final notebook: `notebooks/02_final_kaggle_notebook.ipynb`
 - Research plan: `research/project_plan.md`
 - Current writeup draft: `research/kaggle_writeup_draft.md`
 - AI disclosure draft: `research/ai_usage_disclosure.md`
-

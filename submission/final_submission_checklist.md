@@ -18,6 +18,7 @@
 ## Public Notebook
 
 - [ ] Notebook runs top-to-bottom in Kaggle or a clean local environment.
+- [ ] `notebooks/02_final_kaggle_notebook.ipynb` is the preferred public notebook unless the team chooses to publish the longer working notebook.
 - [ ] All plots render.
 - [ ] No private absolute paths remain.
 - [ ] Raw data access path is documented.
@@ -38,4 +39,3 @@
 - [ ] Decide whether this is Kaggle-only, blog, GitHub release, or preprint.
 - [ ] Notify Hack4Health organizers before broader public publication if required.
 - [ ] Verify dataset citation and license requirements.
-
